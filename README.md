@@ -3,9 +3,7 @@
 ---
 
 [![Build](https://img.shields.io/badge/build-passing-brightgreen?style=flat-square)](https://github.com/yourusername/generic-entity-framework/actions)
-
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](LICENSE)
-
 [![Stars](https://img.shields.io/github/stars/yourusername/generic-entity-framework?style=social)](https://github.com/yourusername/generic-entity-framework)
 
 ---
