@@ -8,11 +8,11 @@
         <version>3.5.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.aniket</groupId>
+    <groupId>com.generic.entity.framework</groupId>
     <artifactId>generic-entity-framework</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>generic-entity-demo</name>
-    <description>generic-entity-demo</description>
+    <name>generic-entity-framework</name>
+    <description>generic-entity-framework</description>
     <url/>
     <licenses>
         <license/>
