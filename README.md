@@ -41,30 +41,30 @@ This framework eliminates that redundancy. Define your entity, extend the generi
 ```
     src
     ├── application/
-    |       ├── controller/
-    |       │ └── YourEntityController.java     //declaration
-    |       ├── dto/
-    |       │ ├── YourEntityDTO.java            //declaration
-    |       │ └── YourEntityMapper.java         //declaration
-    |       ├── model/
-    |       │ └── YourEntity.java               //declaration
-    |       ├── repo/
-    |       │ └── YourEntityRepository.java     //declaration
-    |       └── service/
-    |         └── YourEntityService.java        //declaration
+    |   ├── controller/
+    |   │    └── YourEntityController.java     //declaration
+    |   ├── dto/
+    |   │    ├── YourEntityDTO.java            //declaration
+    |   │    └── YourEntityMapper.java         //declaration
+    |   ├── model/
+    |   │    └── YourEntity.java               //declaration
+    |   ├── repo/
+    |   │    └── YourEntityRepository.java     //declaration
+    |   └── service/
+    |        └── YourEntityService.java        //declaration
     |
     ├── generics/
     |   ├── controller/
-    |   │ └── GenericController.java
+    |   │    └── GenericController.java
     |   ├── dto/
-    |   │ ├── GenericDTO.java
-    |   │ └── GenericMapper.java
+    |   │    ├── GenericDTO.java
+    |   │    └── GenericMapper.java
     |   ├── model/
-    |   │ └── BaseModel.java
+    |   │    └── BaseModel.java
     |   ├── repo/
-    |   │ └── GenericRepository.java
+    |   │    └── GenericRepository.java
     |   └── service/
-    |     └── GenericService.java
+    |        └── GenericService.java
 ```
 
 ---
