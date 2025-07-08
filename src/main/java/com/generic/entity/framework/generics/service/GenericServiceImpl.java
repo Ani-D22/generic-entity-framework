@@ -3,7 +3,7 @@ package com.generic.entity.framework.generics.service;
 import com.generic.entity.framework.generics.dto.GenericDTO;
 import com.generic.entity.framework.generics.dto.GenericMapper;
 import com.generic.entity.framework.generics.repo.GenericRepository;
-import com.generic.entity.framework.generics.service.utils.EntityUtils;
+import com.generic.entity.framework.generics.service.utils.GenericEntityUtils;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,7 +41,7 @@ public class GenericServiceImpl<T, ID extends Serializable> implements GenericSe
             throw new EntityNotFoundException("Entity not found with id " + id);
         }
 //        ID currentId = (ID) EntityUtils.getIdValue(entity);
-        EntityUtils.setIdValue(entity, id);
+        GenericEntityUtils.setIdValue(entity, id);
         return repository.save(entity);
     }
 

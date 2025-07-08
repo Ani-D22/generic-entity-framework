@@ -4,7 +4,7 @@ import jakarta.persistence.Id;
 
 import java.lang.reflect.Field;
 
-public class EntityUtils {
+public class GenericEntityUtils {
 
     public static Field getIdField(Class<?> clazz) {
         for (Field field : clazz.getDeclaredFields()) {
