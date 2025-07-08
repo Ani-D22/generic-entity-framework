@@ -39,19 +39,32 @@ This framework eliminates that redundancy. Define your entity, extend the generi
 ## 🧱 Structure
 
 ```
-src/
-├── controller/
-│ └── GenericController.java
-├── dto/
-│ ├── GenericDTO.java
-│ └── GenericMapper.java
-├── model/
-│ └── Your JPA Entities
-├── repo/
-│ └── GenericRepository.java
-├── service/
-│ ├── GenericService.java
-│ └── YourEntityService.java (optional for custom logic)
+    src
+    ├── application/
+    |       ├── controller/
+    |       │ └── YourEntityController.java     //declaration
+    |       ├── dto/
+    |       │ ├── YourEntityDTO.java            //declaration
+    |       │ └── YourEntityMapper.java         //declaration
+    |       ├── model/
+    |       │ └── YourEntity.java               //declaration
+    |       ├── repo/
+    |       │ └── YourEntityRepository.java     //declaration
+    |       └── service/
+    |         └── YourEntityService.java        //declaration
+    |
+    ├── generics/
+    |   ├── controller/
+    |   │ └── GenericController.java
+    |   ├── dto/
+    |   │ ├── GenericDTO.java
+    |   │ └── GenericMapper.java
+    |   ├── model/
+    |   │ └── BaseModel.java
+    |   ├── repo/
+    |   │ └── GenericRepository.java
+    |   └── service/
+    |     └── GenericService.java
 ```
 
 ---
