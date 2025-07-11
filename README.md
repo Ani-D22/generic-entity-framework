@@ -115,9 +115,11 @@ public class ProductController extends GenericController<Product, Long> {
 
 **🛠️ Requirements**
 
-Java 17+
-Spring Boot 3.x+
-Maven or Gradle
+- Java 17+
+
+- Spring Boot 3.x+
+
+- Maven or Gradle
 
 ---
 
@@ -132,9 +134,11 @@ http://localhost:8080/swagger-ui/index.html
 **🧪 Test It**
 You can test the generic CRUD APIs using:
 
-Swagger UI
-Postman
-cURL
+- Swagger UI
+
+- Postman
+
+- cURL
 
 ---
 
