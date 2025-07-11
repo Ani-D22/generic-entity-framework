@@ -53,18 +53,18 @@ This framework eliminates that redundancy. Define your entity, extend the generi
     |   └── service/
     |        └── YourEntityService.java        //declaration
     |
-    ├── generics/
-    |   ├── controller/
-    |   │    └── GenericController.java
-    |   ├── dto/
-    |   │    ├── GenericDTO.java
-    |   │    └── GenericMapper.java
-    |   ├── model/
-    |   │    └── BaseModel.java
-    |   ├── repo/
-    |   │    └── GenericRepository.java
-    |   └── service/
-    |        └── GenericService.java
+    └── generics/
+        ├── controller/
+        │    └── GenericController.java
+        ├── dto/
+        │    ├── GenericDTO.java
+        │    └── GenericMapper.java
+        ├── model/
+        │    └── BaseModel.java
+        ├── repo/
+        │    └── GenericRepository.java
+        └── service/
+             └── GenericService.java
 ```
 
 ---
