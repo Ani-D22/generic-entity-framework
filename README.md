@@ -53,18 +53,18 @@ This framework eliminates that redundancy. Define your entity, extend the generi
     |   └── service/
     |        └── YourEntityService.java        //declaration
     |
-    ├── generics/
-    |   ├── controller/
-    |   │    └── GenericController.java
-    |   ├── dto/
-    |   │    ├── GenericDTO.java
-    |   │    └── GenericMapper.java
-    |   ├── model/
-    |   │    └── BaseModel.java
-    |   ├── repo/
-    |   │    └── GenericRepository.java
-    |   └── service/
-    |        └── GenericService.java
+    └── generics/
+        ├── controller/
+        │    └── GenericController.java
+        ├── dto/
+        │    ├── GenericDTO.java
+        │    └── GenericMapper.java
+        ├── model/
+        │    └── BaseModel.java
+        ├── repo/
+        │    └── GenericRepository.java
+        └── service/
+             └── GenericService.java
 ```
 
 ---
@@ -115,9 +115,11 @@ public class ProductController extends GenericController<Product, Long> {
 
 **🛠️ Requirements**
 
-Java 17+
-Spring Boot 3.x+
-Maven or Gradle
+- Java 17+
+
+- Spring Boot 3.x+
+
+- Maven or Gradle
 
 ---
 
@@ -132,9 +134,11 @@ http://localhost:8080/swagger-ui/index.html
 **🧪 Test It**
 You can test the generic CRUD APIs using:
 
-Swagger UI
-Postman
-cURL
+- Swagger UI
+
+- Postman
+
+- cURL
 
 ---
 
@@ -143,7 +147,8 @@ If you’d like to extend this framework or report issues, feel free to open a p
 
 ---
 
-**📜 License**
-This project is licensed under the MIT License.
+## License
+
+This project is licensed under the [Apache License 2.0](LICENSE).
 
 ---
