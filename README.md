@@ -36,6 +36,12 @@ This framework eliminates that redundancy. Define your entity, extend the generi
 
 ---
 
+## ⚠️ Work in Progress:
+
+This project is currently in its early prototype stage. It serves as a foundational set of packages, interfaces, and classes intended to be developed into a reusable Spring Boot library. The goal is to provide a plug-and-play dependency that can be integrated into Spring applications via Maven or Gradle and used through custom annotations. At this point, the project is not production-ready and is subject to significant changes.
+
+---
+
 ## 🧱 Structure
 
 ```
