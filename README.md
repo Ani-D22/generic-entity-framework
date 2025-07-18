@@ -158,3 +158,13 @@ If you’d like to extend this framework or report issues, feel free to open a p
 This project is licensed under the [Apache License 2.0](LICENSE).
 
 ---
+
+## 🧠 Inspiration & Honourable Mention
+
+This project is inspired by my experience working with Apache OFBiz, where I was deeply impressed by its powerful Delegator and GenericEntity system.
+
+OFBiz offers an elegant way to perform CRUD operations dynamically with minimal boilerplate — something that is often missing in modern Spring Boot applications. However, OFBiz enforces a tightly coupled, predefined data model that can be restrictive for custom or evolving business needs. You cannot freely modify or remove core entities without unintended consequences.
+
+With this project, I aim to bring the same ease of generic CRUD handling to Spring Boot — a framework often regarded as more flexible and developer-friendly — while giving developers full control over their own domain models and database schema.
+
+---
