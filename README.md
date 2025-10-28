@@ -8,37 +8,45 @@
 
 ---
 
-A flexible and reusable framework built with **Spring Boot** for simplifying CRUD operations on entity models using **Java Generics**. This project abstracts the repetitive boilerplate involved in standard REST API development by introducing a generic structure for controllers, services, repositories, and DTOs — making it easy to scale and maintain.
+A **backend-agnostic**, **annotation-driven**, and **generic CRUD framework** built with **Spring Boot** and **Java Generics** — designed to reduce boilerplate in your data access layer.  
+This framework aims to provide a pluggable dependency that can be imported into any Spring Boot project to handle entity persistence with minimal setup.
 
 ---
 
-## ⚠️ Work in Progress:
+## ⚠️ Work in Progress (v0.1.0-alpha)
 
-This project is currently in its early prototype stage. It serves as a foundational set of packages, interfaces, and classes intended to be developed into a reusable Spring Boot library. The goal is to provide a plug-and-play dependency that can be integrated into Spring applications via Maven or Gradle and used through custom annotations. At this point, the project is not production-ready and is subject to significant changes.
+This version represents the **core foundation** of the project — focusing solely on **entity, repository, and service abstraction**.
+
+It removes controller and DTO layers entirely to keep the framework **lightweight and backend-agnostic**.  
+The long-term goal is to evolve this into a **Spring Boot Starter** that can be added via Maven or Gradle and configured using annotations.
+
+🚧 This is a **prototype release**, not yet production-ready. Expect structural improvements and design pattern refinements in later versions.
 
 ---
 
 ## 🚀 Features
 
-- ✅ **Generic CRUD Operations** (Create, Read, Update, Delete)
-- 📦 **Generic DTO Support** using inheritance and reflection
-- 🔁 **PATCH & PUT support** via partial update mapping
-- 🧩 **GenericMapper** to avoid writing entity-specific mappers
-- 🏷️ Seamless integration with **JPA** and **Spring Data**
-- 📚 OpenAPI / Swagger documentation enabled
+- ✅ Generic CRUD operations (Create, Read, Update, Delete)
+- ♻️ Reusable repository and service base classes
+- 🧩 JPA-agnostic base entity with soft delete and audit fields
+- 🛡️ Supports field-level extensibility and audit logging (planned)
+- 🧱 Plug-and-play structure for entity persistence
+- 🧠 Built using Java Generics and Spring Data abstraction
+- 🪶 Minimal boilerplate, maximum reusability
 
 ---
 
-## 💡 Why Use This Framework?
+## 💡 Why This Framework?
 
-In traditional Spring Boot projects, every entity requires its own:
-- Repository
-- Service
-- DTO
-- Mapper
-- Controller
+In most Spring Boot applications, developers repeatedly write the same code for:
 
-This framework eliminates that redundancy. Define your entity, extend the generic base classes/interfaces, and you’re ready to go.
+- Repositories  
+- Services  
+- CRUD operations  
+- Audit handling and soft deletes  
+
+This framework removes that redundancy.  
+You define your entity and extend the generic base classes — **no repetitive repository or service code needed**.
 
 ---
 
@@ -47,11 +55,6 @@ This framework eliminates that redundancy. Define your entity, extend the generi
 ```
     src
     ├── application/
-    |   ├── controller/
-    |   │    └── YourEntityController.java     //declaration
-    |   ├── dto/
-    |   │    ├── YourEntityDTO.java            //declaration
-    |   │    └── YourEntityMapper.java         //declaration
     |   ├── model/
     |   │    └── YourEntity.java               //declaration
     |   ├── repo/
@@ -60,11 +63,6 @@ This framework eliminates that redundancy. Define your entity, extend the generi
     |        └── YourEntityService.java        //declaration
     |
     └── generics/
-        ├── controller/
-        │    └── GenericController.java
-        ├── dto/
-        │    ├── GenericDTO.java
-        │    └── GenericMapper.java
         ├── model/
         │    └── BaseModel.java
         ├── repo/
@@ -96,27 +94,6 @@ public class Product {
 public interface ProductRepository extends GenericRepository<Product, Long> {}
 ```
 
-**DTO**
-
-```
-public class ProductDTO extends GenericDTO<Product> {
-    private Long id;
-    private String name;
-    private Double price;
-}
-```
-
-**Controller**
-
-```
-@RestController
-@RequestMapping("/api/products")
-public class ProductController extends GenericController<Product, Long> {
-    public ProductController(ProductService service) {
-        super(service, new GenericMapper());
-    }
-}
-```
 ---
 
 **🛠️ Requirements**
@@ -138,6 +115,7 @@ http://localhost:8080/swagger-ui/index.html
 ---
 
 **🧪 Test It**
+
 You can test the generic CRUD APIs using:
 
 - Swagger UI
@@ -148,7 +126,18 @@ You can test the generic CRUD APIs using:
 
 ---
 
+**🧭 Roadmap**
+##Milestone	        ##Focus	                                                            ##Target
+---
+v0.1.0-alpha    |	Core repository & service layer refactor                      |	    ✅ Current
+v0.2.0          |   Add annotation-driven registration for entities & services    |	    ⏳ Next
+v0.3.0          |   Add optional controller layer & auto-doc generation           |     ⏳ Future
+v1.0.0          |   Release as Spring Boot Starter with auto-configuration        |    	🏁 Planned
+
+---
+
 **🤝 Contributing**
+
 If you’d like to extend this framework or report issues, feel free to open a pull request or raise an issue.
 
 ---
@@ -161,10 +150,17 @@ This project is licensed under the [Apache License 2.0](LICENSE).
 
 ## 🧠 Inspiration & Honourable Mention
 
-This project is inspired by my experience working with Apache OFBiz, where I was deeply impressed by its powerful Delegator and GenericEntity system.
+This framework is inspired by Apache OFBiz, particularly its Delegator and GenericEntity systems — which enable dynamic CRUD and data manipulation with minimal boilerplate.
 
-OFBiz offers an elegant way to perform CRUD operations dynamically with minimal boilerplate — something that is often missing in modern Spring Boot applications. However, OFBiz enforces a tightly coupled, predefined data model that can be restrictive for custom or evolving business needs. You cannot freely modify or remove core entities without unintended consequences.
+However, while OFBiz enforces a rigid, predefined data model, this project gives developers:
 
-With this project, I aim to bring the same ease of generic CRUD handling to Spring Boot — a framework often regarded as more flexible and developer-friendly — while giving developers full control over their own domain models and database schema.
+Full control over their own entities and schema
+
+The ability to leverage Spring Boot flexibility
+
+A modern, annotation-based Java experience
+
+In short:
+“Bringing OFBiz-like generic CRUD power into the simplicity of Spring Boot.”
 
 ---
