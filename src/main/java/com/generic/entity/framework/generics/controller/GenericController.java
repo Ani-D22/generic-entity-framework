@@ -38,8 +38,8 @@ public abstract class GenericController<T, ID extends Serializable> {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<T> patch(@PathVariable ID id, @RequestBody GenericDTO<T> entityDto) {
-        return ResponseEntity.ok(service.patch(id, entityDto));
+    public ResponseEntity<T> patch(@PathVariable ID id, @RequestBody GenericDTO<?> entityDto) {
+        return ResponseEntity.ok(service.patch(id, (GenericDTO<T>) entityDto));
     }
 
     @DeleteMapping("/{id}")
