@@ -1,7 +1,5 @@
 package com.generic.entity.framework.generics.service;
 
-import com.generic.entity.framework.generics.dto.GenericDTO;
-import com.generic.entity.framework.generics.dto.GenericMapper;
 import com.generic.entity.framework.generics.repo.GenericRepository;
 import com.generic.entity.framework.generics.service.utils.GenericEntityUtils;
 import jakarta.persistence.EntityNotFoundException;
@@ -46,10 +44,9 @@ public class GenericServiceImpl<T, ID extends Serializable> implements GenericSe
     }
 
     @Override
-    public T patch(@PathVariable ID id, @RequestBody GenericDTO<T> entityDto) {
-        T entity = repository.findById(id).orElseThrow(() -> new RuntimeException("Not found"));
-//        ID currentId = (ID) EntityUtils.getIdValue(entity);
-        GenericMapper.patchEntity(entityDto, entity);
+    public T patch(@PathVariable ID id, @RequestBody T entity) {
+        T oldEntity = repository.findById(id).orElseThrow(() -> new RuntimeException("Not found"));
+        boolean deleted = this.deleteById(id);
         return repository.save(entity);
     }
 
